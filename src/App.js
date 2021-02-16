@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Background from "./Background";
+import useImageColor from "use-image-color";
+import { useState, useEffect } from "react";
+import Img from "./Album.jpg";
 
 function App() {
+  const [color, setColor] = useState(null);
+  const { colors } = useImageColor(Img, { cors: false, colors: 5 });
+
+  useEffect(() => {
+    setColor(colors);
+  }, [colors]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="webmain">
+      {color ? <Background cores={color} img={Img} /> : null}
     </div>
   );
 }
