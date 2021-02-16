@@ -43,22 +43,3 @@ function Background({ color, img }) {
 }
 
 export default Background;
-
-/**
- <div className="container" style={{ height: "50vh", width: "50vw" }}>
-        {position.map((row) => {
-          return row.map((col) => {
-            return (
-              <div
-                className="pixel"
-                style={{ background: col }}
-                key={uuidv4()}
-              />
-            );
-          });
-        })}
-      </div>
-
-
-
- */
