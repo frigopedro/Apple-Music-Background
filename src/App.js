@@ -1,8 +1,8 @@
 import "./App.css";
-import Background from "./Background";
+import Background from "./Components/Background/index.js";
 import useImageColor from "use-image-color";
 import { useState, useEffect } from "react";
-import Img from "./Album.jpg";
+import Img from "./Img/Album.jpg";
 
 function App() {
   const [color, setColor] = useState(null);
@@ -13,8 +13,8 @@ function App() {
   }, [colors]);
 
   return (
-    <div className="webmain">
-      {color ? <Background cores={color} img={Img} /> : null}
+    <div className="App">
+      {color ? <Background color={color} img={Img} /> : null}
     </div>
   );
 }

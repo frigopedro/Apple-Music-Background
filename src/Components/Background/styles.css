@@ -1,0 +1,33 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  position: relative;
+  z-index: -1;
+}
+.pixel {
+  min-width: 30px;
+  position: relative;
+  z-index: 0;
+}
+.blur {
+  position: absolute;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(90px);
+  -webkit-backdrop-filter: blur(15.5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.album {
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}

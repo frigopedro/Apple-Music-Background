@@ -1,10 +1,12 @@
-import "./App.css";
+import "./styles.css";
 import { v4 as uuidv4 } from "uuid";
 
-function Background({ cores, img }) {
+function Background({ color, img }) {
   var position = [];
+  //The set of colors that are going to be used in the background
+  const colors = color;
 
-  const colors = cores;
+  //Creating a 2d array with a specific size, the size implies the resolution of the background
   console.log(colors);
   const SIZE = 6;
   for (var i = 0; i < SIZE; i++) {
@@ -17,9 +19,6 @@ function Background({ cores, img }) {
       position[i][j] = colors[Math.floor(Math.random() * colors.length)];
     }
   }
-  //The set of colors that are going to be used in the background
-
-  //Creating a 2d array with a specific size, the size implies the resolution of the background
 
   return (
     <div className="App">
@@ -44,3 +43,22 @@ function Background({ cores, img }) {
 }
 
 export default Background;
+
+/**
+ <div className="container" style={{ height: "50vh", width: "50vw" }}>
+        {position.map((row) => {
+          return row.map((col) => {
+            return (
+              <div
+                className="pixel"
+                style={{ background: col }}
+                key={uuidv4()}
+              />
+            );
+          });
+        })}
+      </div>
+
+
+
+ */
