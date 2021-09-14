@@ -1,7 +1,10 @@
 import "./styles.css";
 import { v4 as uuidv4 } from "uuid";
+import { useContext } from "react";
+import { ImagesContext } from "../../ImageContext";
 
 function Background({ color, img }) {
+  const data = useContext(ImagesContext);
   var position = [];
   //The set of colors that are going to be used in the background
   const colors = color;
@@ -19,9 +22,12 @@ function Background({ color, img }) {
       position[i][j] = colors[Math.floor(Math.random() * colors.length)];
     }
   }
-
+  {
+  }
   return (
     <div className="App">
+      {console.log(data)}
+
       <div className="blur">
         <img src={img} className="album" />
       </div>

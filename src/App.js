@@ -2,7 +2,7 @@ import "./App.css";
 import Background from "./Components/Background/index.js";
 import useImageColor from "use-image-color";
 import { useState, useEffect } from "react";
-import Img from "./Img/Album.jpg";
+import Img from "./Img/eu.jpg";
 
 function App() {
   const [color, setColor] = useState(null);
